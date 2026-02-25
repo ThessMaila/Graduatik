@@ -1,0 +1,331 @@
+/* Graduatik - Styles personnalisés */
+
+:root {
+  --primary-color: #3498db;
+  --primary-dark: #2980b9;
+  --secondary-color: #2c3e50;
+  --success-color: #2ecc71;
+  --info-color: #3498db;
+  --warning-color: #f39c12;
+  --danger-color: #e74c3c;
+  --light-color: #ecf0f1;
+  --dark-color: #2c3e50;
+  --transition-speed: 0.3s;
+}
+
+/* Styles généraux */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  transition: all var(--transition-speed);
+}
+
+/* Animation de transition */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Sidebar */
+.sidebar {
+  background: linear-gradient(135deg, var(--secondary-color), #34495e);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  transition: all var(--transition-speed);
+  min-height: 100vh;
+  color: white;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 100;
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+  }
+  
+  .main-content {
+    padding-left: 30px;
+  }
+}
+
+.sidebar .nav-link {
+  border-radius: 5px;
+  margin: 5px 10px;
+  transition: all var(--transition-speed);
+  padding: 10px 15px;
+  color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+}
+
+.sidebar .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateX(5px);
+  color: white;
+}
+
+.sidebar .nav-link.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-left: 4px solid var(--primary-color);
+  color: white;
+  font-weight: 500;
+}
+
+/* Cards */
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all var(--transition-speed);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+.card-header {
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 15px 20px;
+}
+
+/* Boutons */
+.btn {
+  border-radius: 5px;
+  padding: 8px 16px;
+  transition: all var(--transition-speed);
+  font-weight: 500;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+
+/* Tableaux */
+.table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  padding: 12px 15px;
+}
+
+.table td {
+  padding: 12px 15px;
+  vertical-align: middle;
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(52, 152, 219, 0.05);
+}
+
+.table-responsive {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Formulaires */
+.form-control {
+  border-radius: 5px;
+  border: 1px solid #e0e0e0;
+  padding: 10px 15px;
+  transition: all var(--transition-speed);
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+}
+
+/* Badges et étiquettes */
+.badge {
+  padding: 5px 10px;
+  border-radius: 50px;
+  font-weight: 500;
+}
+
+/* Stats cards */
+.stat-card {
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+  transition: all var(--transition-speed);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+  z-index: 1;
+}
+
+.stat-card .icon {
+  font-size: 3rem;
+  opacity: 0.8;
+  position: relative;
+  z-index: 2;
+}
+
+.stat-card .count {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 10px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.stat-card .title {
+  font-size: 1rem;
+  opacity: 0.9;
+  position: relative;
+  z-index: 2;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+}
+
+.bg-gradient-success {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+}
+
+.bg-gradient-warning {
+  background: linear-gradient(135deg, #f39c12, #e67e22);
+}
+
+.bg-gradient-danger {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+.bg-gradient-info {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+}
+
+/* Animations pour les éléments */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-in-out;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Utilitaires */
+.shadow-sm {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-md {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.rounded-lg {
+  border-radius: 10px;
+}
+
+.transition-all {
+  transition: all var(--transition-speed);
+}
+
+/* Z-index utilities */
+.z-index-high {
+  z-index: 1000;
+}
+
+/* Styles pour le corps de la page */
+body.sidebar-open {
+  overflow: hidden;
+}
+
+/* Styles pour le contenu principal */
+.main-content {
+  transition: all var(--transition-speed);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    height: 100vh;
+    z-index: 999;
+    width: 280px;
+    transition: all 0.3s;
+    overflow-y: auto;
+    padding-bottom: 50px;
+  }
+  
+  .sidebar.active {
+    left: 0;
+  }
+  
+  .overlay {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 998;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .overlay.active {
+    display: block;
+    opacity: 1;
+  }
+}
