@@ -1,2 +1,2 @@
 # Graduatik
-Application de gestions des sortants
+Application de gestion des sortants
